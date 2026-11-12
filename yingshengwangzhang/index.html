@@ -1,0 +1,1217 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>英盛网账号登录 - 企业培训课程入口与学习指南</title>
+<meta name="description" content="英盛网账号登录相关页面汇集企业培训课程入口、学员登录常见问题、账号权限与课程学习路径，覆盖管理力、销售、人力资源、生产制造等方向，适合企业培训负责人与在职学员查阅。">
+<meta name="keywords" content="英盛网账号登录">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23143a5c'/%3E%3Cpath d='M18 44V20h9l5 12 5-12h9v24h-7V31l-4 9h-6l-4-9v13z' fill='%23f5b642'/%3E%3C/svg%3E">
+<style>
+:root{
+  --brand:#143a5c;
+  --brand-light:#1f5b8a;
+  --brand-deep:#0c2438;
+  --accent:#f5b642;
+  --accent-soft:#fdf1d8;
+  --bg:#f4f6f8;
+  --panel:#ffffff;
+  --text:#1c2530;
+  --text-2:#4a5866;
+  --text-3:#7d8a97;
+  --line:#e2e8ee;
+  --radius-card:12px;
+  --radius-btn:8px;
+  --radius-tag:6px;
+  --radius-banner:16px;
+  --shadow:0 2px 8px rgba(20,58,92,.06);
+  --shadow-hover:0 8px 20px rgba(20,58,92,.14);
+  --gap:24px;
+  --sticky-h:104px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;scroll-padding-top:var(--sticky-h);}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  background:var(--bg);color:var(--text);line-height:1.7;font-size:15px;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none;}
+img{display:block;max-width:100%;}
+ul,ol{list-style:none;}
+button{font-family:inherit;cursor:pointer;}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;}
+
+/* ===== 吸顶公告条 + 页头 ===== */
+.sticky-top{position:sticky;top:0;z-index:100;}
+.notice-bar{
+  background:linear-gradient(90deg,var(--brand-deep),var(--brand));
+  color:#e9f0f7;font-size:13px;padding:7px 16px;
+  display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:center;
+}
+.notice-bar .nb-brand{color:var(--accent);font-weight:700;letter-spacing:.5px;}
+.notice-bar .nb-item{display:inline-flex;align-items:center;gap:6px;white-space:nowrap;}
+.notice-bar .nb-date{background:rgba(245,182,66,.18);color:var(--accent);border-radius:4px;padding:0 6px;font-variant-numeric:tabular-nums;}
+.notice-bar .nb-sep{color:rgba(233,240,247,.35);}
+
+.site-header{
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+  box-shadow:var(--shadow);
+}
+.header-inner{
+  max-width:1360px;margin:0 auto;padding:0 24px;
+  height:62px;display:flex;align-items:center;gap:22px;
+}
+.brand{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+.brand svg{width:36px;height:36px;flex-shrink:0;}
+.brand-text{font-size:19px;font-weight:800;color:var(--brand);letter-spacing:.5px;white-space:nowrap;}
+.main-nav{display:flex;gap:4px;flex:1;flex-wrap:wrap;}
+.main-nav a{
+  font-size:14px;color:var(--text-2);padding:6px 11px;border-radius:var(--radius-tag);
+  transition:background .2s,color .2s;white-space:nowrap;
+}
+.main-nav a:hover{background:var(--accent-soft);color:var(--brand-deep);}
+.header-actions{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+.search-box{position:relative;}
+.search-box input{
+  width:180px;padding:7px 12px;border:1px solid var(--line);border-radius:var(--radius-btn);
+  font-size:13px;background:#f8fafb;transition:border .2s,width .25s;
+}
+.search-box input:focus{border-color:var(--brand-light);background:#fff;outline:none;width:220px;}
+.search-result{
+  position:absolute;top:calc(100% + 6px);right:0;width:300px;max-height:320px;overflow-y:auto;
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius-card);
+  box-shadow:var(--shadow-hover);padding:6px;display:none;z-index:120;
+}
+.search-result.active{display:block;}
+.search-result a{display:block;padding:8px 10px;border-radius:6px;font-size:13px;color:var(--text-2);}
+.search-result a:hover{background:var(--accent-soft);color:var(--brand-deep);}
+.search-result .sr-empty{padding:14px 10px;font-size:13px;color:var(--text-3);text-align:center;}
+.btn-login{
+  background:var(--brand);color:#fff;font-size:14px;font-weight:600;
+  padding:8px 18px;border-radius:var(--radius-btn);border:none;
+  transition:background .2s,transform .2s;
+}
+.btn-login:hover{background:var(--brand-light);transform:translateY(-1px);}
+.hamburger{display:none;background:none;border:1px solid var(--line);border-radius:var(--radius-btn);padding:6px 9px;}
+.hamburger span{display:block;width:18px;height:2px;background:var(--brand);margin:4px 0;transition:.2s;}
+
+/* ===== 首屏 ===== */
+.hero{
+  background:
+    radial-gradient(circle at 82% 20%,rgba(245,182,66,.16),transparent 42%),
+    radial-gradient(circle at 12% 88%,rgba(31,91,138,.35),transparent 46%),
+    linear-gradient(135deg,var(--brand-deep) 0%,var(--brand) 58%,#1d5178 100%);
+  color:#fff;position:relative;overflow:hidden;
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
+  background-size:56px 56px;pointer-events:none;
+}
+.hero-inner{
+  max-width:1360px;margin:0 auto;padding:56px 24px 52px;
+  display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center;position:relative;z-index:1;
+}
+.hero-kicker{
+  display:inline-flex;align-items:center;gap:8px;font-size:13px;letter-spacing:1px;
+  color:var(--accent);background:rgba(245,182,66,.12);border:1px solid rgba(245,182,66,.35);
+  padding:5px 14px;border-radius:20px;margin-bottom:18px;
+}
+.hero-kicker::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2.4s infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.35;}}
+.hero h1{font-size:42px;line-height:1.25;font-weight:800;letter-spacing:1px;margin-bottom:18px;}
+.hero h1 .hl{color:var(--accent);}
+.hero-desc{font-size:16px;color:#cfdce8;max-width:600px;margin-bottom:26px;line-height:1.85;}
+.hero-desc strong{color:#fff;font-weight:600;}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
+.hero-btn{
+  padding:12px 26px;border-radius:var(--radius-btn);font-size:15px;font-weight:600;
+  transition:transform .2s,box-shadow .2s;
+}
+.hero-btn.primary{background:var(--accent);color:var(--brand-deep);box-shadow:0 4px 14px rgba(245,182,66,.35);}
+.hero-btn.primary:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(245,182,66,.5);}
+.hero-btn.ghost{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.28);}
+.hero-btn.ghost:hover{background:rgba(255,255,255,.18);transform:translateY(-2px);}
+.hero-visual{
+  position:relative;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);
+  border-radius:var(--radius-banner);padding:20px;backdrop-filter:blur(6px);
+}
+.hv-title{font-size:12px;color:#9fb6c9;letter-spacing:1px;margin-bottom:12px;display:flex;justify-content:space-between;}
+.hv-title span:last-child{color:var(--accent);}
+.hv-row{
+  display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:8px;
+  background:rgba(255,255,255,.06);margin-bottom:9px;font-size:13px;
+  transition:background .2s;
+}
+.hv-row:hover{background:rgba(255,255,255,.13);}
+.hv-row .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex-shrink:0;}
+.hv-row .dot.blue{background:#6fb0e0;}
+.hv-row .dot.green{background:#7fd6a8;}
+.hv-row .dot.gray{background:#8fa3b5;}
+.hv-row .name{flex:1;color:#eaf2f8;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.hv-row .meta{font-size:12px;color:#8fa8bd;flex-shrink:0;}
+.hv-foot{margin-top:14px;padding-top:12px;border-top:1px dashed rgba(255,255,255,.16);display:flex;justify-content:space-between;font-size:12px;color:#93aabd;}
+.hv-foot strong{color:var(--accent);font-size:15px;}
+
+/* ===== 三栏门户 ===== */
+.portal{
+  max-width:1360px;margin:0 auto;padding:32px 24px 56px;
+  display:grid;grid-template-columns:180px minmax(0,1fr) 260px;gap:var(--gap);align-items:start;
+}
+.channel-col{
+  background:var(--panel);border-radius:var(--radius-card);box-shadow:var(--shadow);
+  padding:16px 12px;position:sticky;top:calc(var(--sticky-h) + 14px);
+}
+.channel-col h2{font-size:14px;color:var(--text-3);font-weight:600;padding:0 8px 10px;letter-spacing:.5px;}
+.channel-list li a{
+  display:flex;align-items:center;gap:9px;padding:9px 10px;border-radius:8px;
+  font-size:14px;color:var(--text-2);transition:background .2s,color .2s;
+}
+.channel-list li a:hover,.channel-list li a.current{background:var(--accent-soft);color:var(--brand-deep);font-weight:600;}
+.channel-list .ch-dot{width:6px;height:6px;border-radius:50%;background:var(--brand-light);flex-shrink:0;opacity:.55;}
+.channel-list li a.current .ch-dot{background:var(--accent);opacity:1;}
+.channel-note{
+  margin-top:14px;padding:12px 10px;background:#f7fafc;border-radius:8px;
+  font-size:12px;color:var(--text-3);line-height:1.65;border-left:3px solid var(--accent);
+}
+
+/* 主内容 */
+.main-col{min-width:0;display:flex;flex-direction:column;gap:32px;}
+.section{background:var(--panel);border-radius:var(--radius-card);box-shadow:var(--shadow);padding:26px 24px;}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-bottom:18px;flex-wrap:wrap;}
+.section-head h2{font-size:20px;font-weight:800;color:var(--brand-deep);letter-spacing:.3px;position:relative;padding-left:14px;}
+.section-head h2::before{content:"";position:absolute;left:0;top:5px;bottom:5px;width:4px;border-radius:2px;background:var(--accent);}
+.section-head .sh-sub{font-size:13px;color:var(--text-3);}
+.section-head .sh-link{font-size:13px;color:var(--brand-light);font-weight:600;}
+.section-head .sh-link:hover{text-decoration:underline;}
+
+/* 概览 */
+.overview-text{font-size:15px;color:var(--text-2);line-height:1.9;}
+.overview-text p{margin-bottom:14px;}
+.overview-text p:last-child{margin-bottom:0;}
+.overview-text strong{color:var(--brand-deep);font-weight:600;}
+.overview-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px;}
+.ov-stat{background:#f7fafc;border-radius:10px;padding:14px 12px;text-align:center;border:1px solid var(--line);}
+.ov-stat .num{font-size:22px;font-weight:800;color:var(--brand);font-variant-numeric:tabular-nums;}
+.ov-stat .lbl{font-size:12px;color:var(--text-3);margin-top:2px;}
+
+/* 精选卡片 */
+.card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;}
+.card{
+  border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff;
+  display:flex;flex-direction:column;transition:transform .22s,box-shadow .22s,border-color .22s;
+}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover);border-color:#c8d7e3;}
+.card-img{position:relative;aspect-ratio:4/3;overflow:hidden;background:#e8eef3;}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s;}
+.card:hover .card-img img{transform:scale(1.04);}
+.card-badge{
+  position:absolute;top:9px;left:9px;background:rgba(12,36,56,.82);color:var(--accent);
+  font-size:11px;font-weight:600;padding:3px 9px;border-radius:4px;backdrop-filter:blur(4px);
+}
+.card-body{padding:13px 14px 15px;display:flex;flex-direction:column;gap:8px;flex:1;}
+.card-title{font-size:15px;font-weight:700;color:var(--text);line-height:1.45;}
+.card-title:hover{color:var(--brand-light);}
+.card-look{font-size:13px;color:var(--text-2);line-height:1.65;flex:1;}
+.card-tags{display:flex;gap:6px;flex-wrap:wrap;}
+.tag{
+  font-size:11px;color:var(--brand-light);background:#eef4f9;border-radius:var(--radius-tag);
+  padding:2px 8px;white-space:nowrap;
+}
+.card-meta{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--text-3);padding-top:8px;border-top:1px dashed var(--line);}
+.card-meta .heat{color:#d98a1c;font-weight:600;}
+.card-meta .rating{color:var(--brand);font-weight:700;}
+
+/* 最新动态列表 */
+.update-list{display:flex;flex-direction:column;gap:2px;}
+.update-item{
+  display:grid;grid-template-columns:64px 1fr auto;gap:14px;align-items:baseline;
+  padding:12px 10px;border-radius:8px;transition:background .2s;
+}
+.update-item:hover{background:#f7fafc;}
+.update-item .u-date{font-size:12px;color:var(--text-3);font-variant-numeric:tabular-nums;white-space:nowrap;}
+.update-item .u-main{min-width:0;}
+.update-item .u-name{font-size:14px;font-weight:600;color:var(--text);margin-bottom:2px;}
+.update-item .u-name:hover{color:var(--brand-light);}
+.update-item .u-desc{font-size:13px;color:var(--text-2);line-height:1.6;}
+.update-item .u-type{font-size:11px;color:var(--brand-light);background:#eef4f9;border-radius:4px;padding:2px 8px;white-space:nowrap;}
+
+/* 分类入口 */
+.cat-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;}
+.cat-card{
+  border:1px solid var(--line);border-radius:10px;padding:16px 14px;background:#fbfdfe;
+  transition:border-color .2s,background .2s,transform .2s;display:block;
+}
+.cat-card:hover{border-color:var(--brand-light);background:#fff;transform:translateY(-2px);box-shadow:var(--shadow);}
+.cat-card .c-name{font-size:15px;font-weight:700;color:var(--brand-deep);margin-bottom:5px;}
+.cat-card .c-desc{font-size:12px;color:var(--text-3);line-height:1.6;}
+.cat-card .c-count{font-size:11px;color:var(--accent);font-weight:700;margin-top:7px;display:inline-block;}
+
+/* 深度解析 */
+.deep-text{font-size:15px;color:var(--text-2);line-height:1.95;}
+.deep-text h3{font-size:17px;font-weight:800;color:var(--brand-deep);margin:22px 0 10px;padding-left:12px;border-left:3px solid var(--accent);}
+.deep-text h3:first-child{margin-top:0;}
+.deep-text p{margin-bottom:13px;}
+.deep-text ul{margin:0 0 14px 4px;display:flex;flex-direction:column;gap:7px;}
+.deep-text li{font-size:14px;line-height:1.75;padding-left:16px;position:relative;}
+.deep-text li::before{content:"";position:absolute;left:0;top:9px;width:5px;height:5px;border-radius:50%;background:var(--brand-light);}
+.deep-text strong{color:var(--brand-deep);font-weight:600;}
+.check-box{background:#f7fafc;border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:16px 0;}
+.check-box .cb-title{font-size:13px;font-weight:700;color:var(--brand);margin-bottom:10px;letter-spacing:.5px;}
+.check-box .cb-row{display:flex;gap:12px;font-size:13px;padding:7px 0;border-bottom:1px dashed var(--line);align-items:baseline;color:var(--text-2);}
+.check-box .cb-row:last-child{border-bottom:none;}
+.check-box .cb-key{flex-shrink:0;width:96px;color:var(--brand-deep);font-weight:600;}
+
+/* 体验指南步骤 */
+.steps{display:flex;flex-direction:column;gap:14px;counter-reset:step;}
+.step{
+  display:grid;grid-template-columns:44px 1fr;gap:16px;padding:16px 18px;background:#fbfdfe;
+  border:1px solid var(--line);border-radius:10px;counter-increment:step;
+}
+.step::before{
+  content:counter(step,decimal-leading-zero);
+  font-size:18px;font-weight:800;color:var(--accent);background:var(--brand-deep);
+  width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;
+  font-variant-numeric:tabular-nums;
+}
+.step-body .s-title{font-size:15px;font-weight:700;color:var(--brand-deep);margin-bottom:5px;}
+.step-body .s-desc{font-size:13px;color:var(--text-2);line-height:1.7;}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:10px;}
+.faq-list details{
+  border:1px solid var(--line);border-radius:10px;background:#fbfdfe;overflow:hidden;
+  transition:border-color .2s;
+}
+.faq-list details[open]{border-color:var(--brand-light);background:#fff;}
+.faq-list summary{
+  padding:14px 18px;font-size:15px;font-weight:600;color:var(--text);cursor:pointer;
+  display:flex;justify-content:space-between;align-items:center;gap:12px;list-style:none;
+}
+.faq-list summary::-webkit-details-marker{display:none;}
+.faq-list summary::after{content:"+";font-size:20px;color:var(--brand-light);font-weight:400;flex-shrink:0;transition:transform .2s;}
+.faq-list details[open] summary::after{content:"−";}
+.faq-list .faq-answer{padding:0 18px 16px;font-size:14px;color:var(--text-2);line-height:1.85;}
+
+/* 评论 */
+.comment-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;}
+.comment{
+  background:#fbfdfe;border:1px solid var(--line);border-radius:10px;padding:14px 16px;
+  display:flex;flex-direction:column;gap:8px;
+}
+.comment-head{display:flex;align-items:center;gap:9px;}
+.avatar{
+  width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--brand-light),var(--brand));
+  color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.comment-head .c-nick{font-size:13px;font-weight:600;color:var(--text);}
+.comment-head .c-time{font-size:11px;color:var(--text-3);margin-left:auto;}
+.comment-body{font-size:13px;color:var(--text-2);line-height:1.75;}
+
+/* 资讯 */
+.news-list{display:flex;flex-direction:column;gap:14px;}
+.news-item{display:grid;grid-template-columns:120px 1fr;gap:16px;padding-bottom:14px;border-bottom:1px dashed var(--line);}
+.news-item:last-child{border-bottom:none;padding-bottom:0;}
+.news-item img{border-radius:8px;aspect-ratio:3/2;object-fit:cover;width:100%;height:auto;}
+.news-body .n-title{font-size:15px;font-weight:700;color:var(--text);margin-bottom:4px;}
+.news-body .n-title:hover{color:var(--brand-light);}
+.news-body .n-date{font-size:12px;color:var(--text-3);margin-bottom:5px;font-variant-numeric:tabular-nums;}
+.news-body .n-sum{font-size:13px;color:var(--text-2);line-height:1.7;}
+
+/* 相关推荐 */
+.rec-tags{display:flex;flex-wrap:wrap;gap:9px;}
+.rec-tags a{
+  font-size:13px;color:var(--brand);background:#eef4f9;border:1px solid #dce8f1;
+  padding:7px 14px;border-radius:20px;transition:background .2s,color .2s,border-color .2s;
+}
+.rec-tags a:hover{background:var(--brand);color:#fff;border-color:var(--brand);}
+
+/* 榜单 */
+.rank-list{display:flex;flex-direction:column;gap:8px;}
+.rank-item{display:grid;grid-template-columns:30px 1fr auto;gap:12px;align-items:center;padding:10px 12px;border-radius:8px;background:#fbfdfe;border:1px solid var(--line);transition:background .2s,border-color .2s;}
+.rank-item:hover{background:#fff;border-color:var(--brand-light);}
+.rank-no{font-size:16px;font-weight:800;color:var(--text-3);font-variant-numeric:tabular-nums;text-align:center;}
+.rank-item:nth-child(1) .rank-no{color:#d94f2b;}
+.rank-item:nth-child(2) .rank-no{color:#d98a1c;}
+.rank-item:nth-child(3) .rank-no{color:#b8942f;}
+.rank-name{font-size:14px;font-weight:600;color:var(--text);}
+.rank-sub{font-size:12px;color:var(--text-3);margin-top:1px;}
+.rank-val{font-size:12px;color:#d98a1c;font-weight:700;white-space:nowrap;}
+
+/* 互动征集 */
+.contribute{
+  background:linear-gradient(135deg,var(--brand-deep),var(--brand-light));
+  border-radius:var(--radius-card);padding:26px 24px;color:#fff;
+  display:grid;grid-template-columns:1fr auto;gap:22px;align-items:center;
+}
+.contribute h2{font-size:20px;font-weight:800;margin-bottom:8px;}
+.contribute p{font-size:14px;color:#cfdce8;line-height:1.75;}
+.contribute .cta-btn{
+  background:var(--accent);color:var(--brand-deep);font-size:14px;font-weight:700;
+  padding:11px 24px;border-radius:var(--radius-btn);white-space:nowrap;transition:transform .2s;
+}
+.contribute .cta-btn:hover{transform:translateY(-2px);}
+
+/* 右栏 */
+.aside-col{display:flex;flex-direction:column;gap:20px;position:sticky;top:calc(var(--sticky-h) + 14px);}
+.aside-card{background:var(--panel);border-radius:var(--radius-card);box-shadow:var(--shadow);padding:18px 16px;}
+.aside-card h2{font-size:15px;font-weight:800;color:var(--brand-deep);margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--accent-soft);}
+.hot-list{display:flex;flex-direction:column;gap:3px;}
+.hot-list a{display:flex;gap:10px;padding:8px 6px;border-radius:6px;font-size:13px;color:var(--text-2);transition:background .2s;}
+.hot-list a:hover{background:#f7fafc;color:var(--brand-light);}
+.hot-list .h-no{font-size:12px;font-weight:800;color:var(--text-3);width:16px;flex-shrink:0;font-variant-numeric:tabular-nums;}
+.hot-list a:nth-child(-n+3) .h-no{color:#d94f2b;}
+.quick-links{display:flex;flex-direction:column;gap:2px;}
+.quick-links a{font-size:13px;color:var(--text-2);padding:8px 10px;border-radius:6px;display:flex;justify-content:space-between;transition:background .2s;}
+.quick-links a:hover{background:var(--accent-soft);color:var(--brand-deep);}
+.quick-links a span{color:var(--text-3);font-size:12px;}
+.side-note{font-size:12px;color:var(--text-3);line-height:1.7;padding:10px 12px;background:#f7fafc;border-radius:8px;margin-top:12px;}
+
+/* 页脚 */
+.site-footer{background:var(--brand-deep);color:#c3d2df;margin-top:12px;}
+.footer-inner{max-width:1360px;margin:0 auto;padding:44px 24px 26px;}
+.footer-top{display:grid;grid-template-columns:1.4fr 2fr;gap:40px;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,.1);}
+.footer-brand{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.footer-brand svg{width:34px;height:34px;}
+.footer-brand .fb-text{font-size:19px;font-weight:800;color:#fff;}
+.footer-pos{font-size:13px;line-height:1.8;color:#9fb6c9;max-width:380px;}
+.footer-groups{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.fg-title{font-size:13px;font-weight:700;color:var(--accent);margin-bottom:12px;letter-spacing:.5px;}
+.fg-list{display:flex;flex-direction:column;gap:8px;}
+.fg-list a{font-size:13px;color:#a9bccd;transition:color .2s;}
+.fg-list a:hover{color:#fff;}
+.footer-bottom{padding-top:20px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12px;color:#7d94a8;line-height:1.8;}
+
+/* 回到顶部 */
+.back-top{
+  position:fixed;right:22px;bottom:26px;width:44px;height:44px;border-radius:50%;
+  background:var(--brand);color:#fff;border:none;font-size:18px;
+  box-shadow:var(--shadow-hover);display:none;align-items:center;justify-content:center;
+  z-index:90;transition:background .2s,transform .2s;
+}
+.back-top.show{display:flex;}
+.back-top:hover{background:var(--brand-light);transform:translateY(-2px);}
+
+/* 遮罩 */
+.overlay{position:fixed;inset:0;background:rgba(12,36,56,.5);z-index:95;display:none;}
+.overlay.active{display:block;}
+
+/* 响应式 */
+@media (max-width:1200px){
+  .portal{grid-template-columns:170px minmax(0,1fr) 240px;gap:18px;}
+  .card-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .cat-grid{grid-template-columns:repeat(3,minmax(0,1fr));}
+}
+@media (max-width:1024px){
+  .portal{grid-template-columns:160px minmax(0,1fr);}
+  .aside-col{display:none;}
+  .hero-inner{grid-template-columns:1fr;gap:30px;}
+  .hero h1{font-size:34px;}
+  .footer-top{grid-template-columns:1fr;gap:28px;}
+  .main-nav{display:none;}
+  .hamburger{display:block;}
+  .search-box input{width:140px;}
+  .search-box input:focus{width:170px;}
+}
+@media (max-width:740px){
+  :root{--sticky-h:96px;}
+  .portal{grid-template-columns:1fr;padding:20px 14px 40px;}
+  .channel-col{
+    position:static;padding:12px;display:none;
+  }
+  .channel-col.mobile-open{display:block;}
+  .channel-list{display:grid;grid-template-columns:repeat(2,1fr);gap:4px;}
+  .hero-inner{padding:38px 16px 36px;}
+  .hero h1{font-size:28px;}
+  .hero-desc{font-size:15px;}
+  .section{padding:20px 16px;}
+  .card-grid{grid-template-columns:1fr;}
+  .cat-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .comment-grid{grid-template-columns:1fr;}
+  .overview-stats{grid-template-columns:repeat(2,1fr);}
+  .news-item{grid-template-columns:1fr;}
+  .news-item img{aspect-ratio:16/9;}
+  .update-item{grid-template-columns:1fr;gap:4px;}
+  .update-item .u-date{font-size:11px;}
+  .header-inner{padding:0 14px;gap:10px;}
+  .brand-text{font-size:16px;}
+  .search-box{display:none;}
+  .btn-login{padding:7px 13px;font-size:13px;}
+  .contribute{grid-template-columns:1fr;}
+  .footer-groups{grid-template-columns:repeat(2,1fr);}
+  .footer-inner{padding:32px 16px 22px;}
+  .step{grid-template-columns:1fr;gap:10px;}
+  .step::before{width:36px;height:36px;font-size:15px;}
+  .check-box .cb-row{flex-direction:column;gap:2px;}
+  .check-box .cb-key{width:auto;}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important;}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="sticky-top">
+  <div class="notice-bar" id="noticeBar">
+    <span class="nb-brand">英盛网账号登录</span>
+    <span class="nb-sep">|</span>
+    <span class="nb-item"><span class="nb-date">2026-11-07</span>「新任经理带团队 30 讲」上线第 6 单元</span>
+    <span class="nb-sep">|</span>
+    <span class="nb-item"><span class="nb-date">2026-11-05</span>企业子账号权限分组功能更新</span>
+  </div>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/#top" class="brand" aria-label="英盛网账号登录首页">
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#143a5c"/>
+          <path d="M16 46V18h10l6 14 6-14h10v28h-8V32l-5 11h-6l-5-11v14z" fill="#f5b642"/>
+          <circle cx="50" cy="16" r="4" fill="#6fb0e0"/>
+        </svg>
+        <span class="brand-text">英盛网账号登录</span>
+      </a>
+      <nav class="main-nav" aria-label="主导航">
+        <a href="/#channel">频道索引</a>
+        <a href="/#overview">培训概览</a>
+        <a href="/#featured">精选课程</a>
+        <a href="/#updates">更新动态</a>
+        <a href="/#categories">课程分类</a>
+        <a href="/#deep">深度解析</a>
+        <a href="/#guide">学习路径</a>
+        <a href="/#faq">常见问题</a>
+        <a href="/#news">相关资讯</a>
+      </nav>
+      <div class="header-actions">
+        <div class="search-box">
+          <input type="search" id="siteSearch" placeholder="搜索课程或条目" aria-label="站内搜索">
+          <div class="search-result" id="searchResult" role="listbox" aria-label="搜索结果"></div>
+        </div>
+        <button class="btn-login" type="button">账号登录</button>
+        <button class="hamburger" id="hamburger" aria-label="打开频道菜单" aria-expanded="false" aria-controls="channel">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+</div>
+
+<div class="overlay" id="overlay" tabindex="-1"></div>
+
+<main id="top">
+
+  <!-- 首屏 -->
+  <section class="hero" aria-labelledby="heroTitle">
+    <div class="hero-inner">
+      <div>
+        <span class="hero-kicker">企业培训 · 学习入口</span>
+        <h1 id="heroTitle">英盛网账号登录</h1>
+        <p class="hero-desc">
+          这里汇总企业培训课程的登录入口说明、学员账号权限梳理与学习路径建议。内容覆盖<strong>管理力、销售成交、人力资源、生产制造、财务合规</strong>五个方向，包含课程条目、单元进度、账号分组规则与常见登录问题，适合企业培训负责人和在职学员按需查阅。
+        </p>
+        <div class="hero-actions">
+          <a class="hero-btn primary" href="/#featured">查看精选课程</a>
+          <a class="hero-btn ghost" href="/#faq">登录问题解答</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hv-title"><span>学习进度看板</span><span>2026-11-08</span></div>
+        <div class="hv-row"><span class="dot"></span><span class="name">新任经理带团队 30 讲</span><span class="meta">第 6/30 单元</span></div>
+        <div class="hv-row"><span class="dot blue"></span><span class="name">大客户销售拜访全流程</span><span class="meta">第 12/24 单元</span></div>
+        <div class="hv-row"><span class="dot green"></span><span class="name">绩效面谈 12 个场景话术</span><span class="meta">已完成</span></div>
+        <div class="hv-row"><span class="dot gray"></span><span class="name">生产现场 5S 推行实务</span><span class="meta">第 3/18 单元</span></div>
+        <div class="hv-foot"><span>本周活跃学员 <strong>2,846</strong> 人</span><span>课程完成率 67%</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="portal">
+
+    <!-- 左栏频道索引 -->
+    <aside class="channel-col" id="channel" aria-labelledby="channelTitle">
+      <h2 id="channelTitle">频道索引</h2>
+      <ul class="channel-list">
+        <li><a href="/#overview" class="current"><span class="ch-dot"></span>培训概览</a></li>
+        <li><a href="/#featured"><span class="ch-dot"></span>精选课程</a></li>
+        <li><a href="/#updates"><span class="ch-dot"></span>更新动态</a></li>
+        <li><a href="/#categories"><span class="ch-dot"></span>课程分类</a></li>
+        <li><a href="/#deep"><span class="ch-dot"></span>深度解析</a></li>
+        <li><a href="/#guide"><span class="ch-dot"></span>学习路径</a></li>
+        <li><a href="/#faq"><span class="ch-dot"></span>常见问题</a></li>
+        <li><a href="/#comments"><span class="ch-dot"></span>学员评论</a></li>
+        <li><a href="/#news"><span class="ch-dot"></span>相关资讯</a></li>
+        <li><a href="/#rank"><span class="ch-dot"></span>热度榜单</a></li>
+        <li><a href="/#contribute"><span class="ch-dot"></span>经验投稿</a></li>
+      </ul>
+      <div class="channel-note">
+        企业子账号由管理员在后台统一开通，个人账号可通过手机号注册后登录学习。
+      </div>
+    </aside>
+
+    <!-- 中间主内容 -->
+    <div class="main-col">
+
+      <!-- 1 主题领域概览 -->
+      <section class="section" id="overview" aria-labelledby="overviewTitle">
+        <div class="section-head">
+          <h2 id="overviewTitle">企业在线培训的内容构成</h2>
+          <span class="sh-sub">按方向、按岗位、按学习形态梳理</span>
+        </div>
+        <div class="overview-text">
+          <p>
+            企业在线培训的课程体系通常按<strong>岗位能力</strong>切分，而不是按学科切分。以企业培训平台常见结构看，管理线从「新任经理带团队」起步，覆盖目标拆解、绩效面谈、跨部门协作；销售线以「大客户销售拜访全流程」为代表，包含客户画像、方案呈现、异议处理、回款跟进；人力资源线则集中在招聘面试、薪酬结构、员工关系三类模块。生产制造方向偏重现场管理与安全规范，财务合规方向侧重票据、税务与内控流程。
+          </p>
+          <p>
+            课程形态上，<strong>系列课、单点微课、直播回放、案例拆解</strong>是四种常见形态。系列课按单元推进，适合系统学习；微课多在 10—20 分钟，用于补齐某个具体动作；直播回放通常带答疑片段，信息密度高于录播；案例拆解则以真实业务场景为线索，适合管理者做团队共学材料。
+          </p>
+          <p>
+            账号层面，企业采购通常分为<strong>管理员账号、部门子账号、学员账号</strong>三类。管理员负责开通、分组与学习数据导出，部门子账号可查看本部门进度，学员账号只保留学习与考试权限。登录前先确认账号归属，是减少「登录后看不到课程」这类问题的第一步。
+          </p>
+        </div>
+        <div class="overview-stats">
+          <div class="ov-stat"><div class="num">5</div><div class="lbl">主要课程方向</div></div>
+          <div class="ov-stat"><div class="num">12</div><div class="lbl">本期精选条目</div></div>
+          <div class="ov-stat"><div class="num">3</div><div class="lbl">账号权限层级</div></div>
+          <div class="ov-stat"><div class="num">11-08</div><div class="lbl">最近更新日期</div></div>
+        </div>
+      </section>
+
+      <!-- 2 精选内容推荐 -->
+      <section class="section" id="featured" aria-labelledby="featuredTitle">
+        <div class="section-head">
+          <h2 id="featuredTitle">本周精选课程条目</h2>
+          <a class="sh-link" href="/#categories">按分类浏览 →</a>
+        </div>
+        <div class="card-grid">
+          <article class="card">
+            <div class="card-img">
+              <img src="https://picsum.photos/seed/yspxinrenjingli01/400/300" width="400" height="300" loading="lazy" alt="新任经理带团队课程封面，团队会议场景">
+              <span class="card-badge">系列课</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title"><a href="/#featured">新任经理带团队 30 讲</a></h3>
+              <p class="card-look">从角色转换讲到目标拆解、一对一沟通与绩效反馈，每讲配一份可下载的会议模板。第 6 单元「第一次绩效面谈怎么开口」为本周新增。</p>
+              <div class="card-tags"><span class="tag">管理力</span><span class="tag">团队沟通</span><span class="tag">绩效面谈</span></div>
+              <div class="card-meta"><span class="heat">热度 9,420</span><span class="rating">4.8 分</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-img">
+              <img src="https://picsum.photos/seed/yspxxiaoshou02/400/300" width="400" height="300" loading="lazy" alt="大客户销售拜访课程封面，商务洽谈桌面">
+              <span class="card-badge">系列课</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title"><a href="/#featured">大客户销售拜访全流程</a></h3>
+              <p class="card-look">把一次拜访拆成预约、破冰、需求澄清、方案呈现、异议处理、会后跟进六段，附 18 个常见异议的应答脚本，适合 B 端销售新人。</p>
+              <div class="card-tags"><span class="tag">销售成交</span><span class="tag">客户拜访</span><span class="tag">异议处理</span></div>
+              <div class="card-meta"><span class="heat">热度 8,760</span><span class="rating">4.7 分</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-img">
+              <img src="https://picsum.photos/seed/yspxjixiao03/400/300" width="400" height="300" loading="lazy" alt="绩效面谈场景课程封面，办公室一对一沟通">
+              <span class="card-badge">微课</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title"><a href="/#featured">绩效面谈 12 个场景话术</a></h3>
+              <p class="card-look">覆盖低绩效反馈、晋升沟通、离职挽留、跨级评价异议等 12 个具体场景，每段话术给出「不推荐说法」与「替换说法」对照。</p>
+              <div class="card-tags"><span class="tag">人力资源</span><span class="tag">绩效管理</span><span class="tag">面谈话术</span></div>
+              <div class="card-meta"><span class="heat">热度 7,310</span><span class="rating">4.9 分</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-img">
+              <img src="https://picsum.photos/seed/yspx5s04/400/300" width="400" height="300" loading="lazy" alt="生产现场 5S 管理课程封面，车间物料摆放">
+              <span class="card-badge">案例拆解</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title"><a href="/#featured">生产现场 5S 推行实务</a></h3>
+              <p class="card-look">以一家汽配厂的三个月推行记录为线索，讲清整理、整顿、清扫、清洁、素养五个阶段的检查表怎么定，以及推行受阻时如何复盘。</p>
+              <div class="card-tags"><span class="tag">生产制造</span><span class="tag">现场管理</span><span class="tag">5S</span></div>
+              <div class="card-meta"><span class="heat">热度 5,880</span><span class="rating">4.6 分</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-img">
+              <img src="https://picsum.photos/seed/yspxcaiwu05/400/300" width="400" height="300" loading="lazy" alt="费用报销合规课程封面，财务票据整理">
+              <span class="card-badge">直播回放</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title"><a href="/#featured">费用报销合规 8 个高频雷区</a></h3>
+              <p class="card-look">直播回放保留 42 分钟讲解与 18 分钟答疑，逐条对照发票类型、抬头信息、审批链条，给出财务退单最常见的 8 类原因。</p>
+              <div class="card-tags"><span class="tag">财务合规</span><span class="tag">费用报销</span><span class="tag">内控</span></div>
+              <div class="card-meta"><span class="heat">热度 6,240</span><span class="rating">4.7 分</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-img">
+              <img src="https://picsum.photos/seed/yspxzhaopin06/400/300" width="400" height="300" loading="lazy" alt="结构化面试课程封面，面试官与候选人对话">
+              <span class="card-badge">系列课</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title"><a href="/#featured">结构化面试提问清单</a></h3>
+              <p class="card-look">按岗位能力项设计 5 类问题，含行为面试 STAR 追问示例与评分表模板，重点解决「问了但问不出真东西」的面试困境。</p>
+              <div class="card-tags"><span class="tag">人力资源</span><span class="tag">招聘面试</span><span class="tag">STAR</span></div>
+              <div class="card-meta"><span class="heat">热度 6,950</span><span class="rating">4.8 分</span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 3 最新更新 -->
+      <section class="section" id="updates" aria-labelledby="updatesTitle">
+        <div class="section-head">
+          <h2 id="updatesTitle">课程与账号功能更新</h2>
+          <span class="sh-sub">2026-10-10 至 2026-11-08</span>
+        </div>
+        <ul class="update-list">
+          <li class="update-item">
+            <span class="u-date">2026-11-07</span>
+            <div class="u-main">
+              <a class="u-name" href="/#featured">新任经理带团队 30 讲 · 第 6 单元上线</a>
+              <div class="u-desc">新增「第一次绩效面谈怎么开口」，含 3 段示范音频与 1 份面谈准备清单。</div>
+            </div>
+            <span class="u-type">课程更新</span>
+          </li>
+          <li class="update-item">
+            <span class="u-date">2026-11-05</span>
+            <div class="u-main">
+              <a class="u-name" href="/#faq">企业子账号权限分组功能更新</a>
+              <div class="u-desc">管理员可按部门批量设置「仅学习」「可考试」「可导出」三档权限，变更记录保留 90 天。</div>
+            </div>
+            <span class="u-type">功能更新</span>
+          </li>
+          <li class="update-item">
+            <span class="u-date">2026-11-03</span>
+            <div class="u-main">
+              <a class="u-name" href="/#featured">大客户销售拜访全流程 · 异议脚本扩至 18 条</a>
+              <div class="u-desc">补充「预算不足」「已有供应商」两类高频异议，每类给出 3 种应答路径。</div>
+            </div>
+            <span class="u-type">课程更新</span>
+          </li>
+          <li class="update-item">
+            <span class="u-date">2026-10-29</span>
+            <div class="u-main">
+              <a class="u-name" href="/#guide">学习路径页新增「30 天新经理训练营」排期</a>
+              <div class="u-desc">按周拆分学习任务，每周配一次线上共学，报名入口在路径页底部。</div>
+            </div>
+            <span class="u-type">学习路径</span>
+          </li>
+          <li class="update-item">
+            <span class="u-date">2026-10-26</span>
+            <div class="u-main">
+              <a class="u-name" href="/#faq">手机号登录支持验证码与密码双通道</a>
+              <div class="u-desc">原仅支持验证码登录的账号，可在个人中心补充密码，两种方式任选其一。</div>
+            </div>
+            <span class="u-type">功能更新</span>
+          </li>
+          <li class="update-item">
+            <span class="u-date">2026-10-22</span>
+            <div class="u-main">
+              <a class="u-name" href="/#featured">绩效面谈 12 个场景话术 · 新增跨级评价异议</a>
+              <div class="u-desc">针对「上级的上级给出低评价」情形，给出一次沟通的结构与三句开场参考。</div>
+            </div>
+            <span class="u-type">课程更新</span>
+          </li>
+          <li class="update-item">
+            <span class="u-date">2026-10-18</span>
+            <div class="u-main">
+              <a class="u-name" href="/#news">费用报销合规直播回放上线答疑文字稿</a>
+              <div class="u-desc">18 分钟答疑整理为 11 条问答，覆盖电子发票重复报销、跨期票据处理等问题。</div>
+            </div>
+            <span class="u-type">资料更新</span>
+          </li>
+          <li class="update-item">
+            <span class="u-date">2026-10-14</span>
+            <div class="u-main">
+              <a class="u-name" href="/#rank">热度榜单改为每周三更新</a>
+              <div class="u-desc">统计口径调整为「近 7 天学习完成人次」，与课程播放量分开计算。</div>
+            </div>
+            <span class="u-type">榜单规则</span>
+          </li>
+          <li class="update-item">
+            <span class="u-date">2026-10-11</span>
+            <div class="u-main">
+              <a class="u-name" href="/#featured">生产现场 5S 推行实务 · 补充第三阶段检查表</a>
+              <div class="u-desc">清扫阶段检查表新增 9 项，标注了每项的检查频次与责任人建议。</div>
+            </div>
+            <span class="u-type">课程更新</span>
+          </li>
+          <li class="update-item">
+            <span class="u-date">2026-10-10</span>
+            <div class="u-main">
+              <a class="u-name" href="/#contribute">经验投稿通道开放「培训落地案例」分类</a>
+              <div class="u-desc">接受 800—2000 字的培训落地记录，需附课程名称、参与人数与可核对的结果数据。</div>
+            </div>
+            <span class="u-type">互动</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 4 分类入口 -->
+      <section class="section" id="categories" aria-labelledby="categoriesTitle">
+        <div class="section-head">
+          <h2 id="categoriesTitle">按岗位方向找课程</h2>
+          <span class="sh-sub">8 个分类，对应常见岗位能力项</span>
+        </div>
+        <div class="cat-grid">
+          <a class="cat-card" href="/#featured"><div class="c-name">管理力与管理技能</div><div class="c-desc">目标拆解、团队沟通、绩效面谈、跨部门协作</div><span class="c-count">142 门课程</span></a>
+          <a class="cat-card" href="/#featured"><div class="c-name">销售与客户成交</div><div class="c-desc">客户拜访、方案呈现、异议处理、回款跟进</div><span class="c-count">96 门课程</span></a>
+          <a class="cat-card" href="/#featured"><div class="c-name">人力资源与招聘</div><div class="c-desc">结构化面试、薪酬结构、员工关系、培训体系</div><span class="c-count">118 门课程</span></a>
+          <a class="cat-card" href="/#featured"><div class="c-name">生产制造与现场管理</div><div class="c-desc">5S 推行、安全生产、班组管理、质量改善</div><span class="c-count">73 门课程</span></a>
+          <a class="cat-card" href="/#featured"><div class="c-name">财务与合规</div><div class="c-desc">费用报销、税务基础、内控流程、票据管理</div><span class="c-count">64 门课程</span></a>
+          <a class="cat-card" href="/#featured"><div class="c-name">新员工入职培训</div><div class="c-desc">企业文化、规章制度、岗位基础、职业素养</div><span class="c-count">51 门课程</span></a>
+          <a class="cat-card" href="/#featured"><div class="c-name">办公效率与工具</div><div class="c-desc">表格处理、汇报呈现、时间管理、会议组织</div><span class="c-count">88 门课程</span></a>
+          <a class="cat-card" href="/#featured"><div class="c-name">职业资格与考证</div><div class="c-desc">人力资源管理师、初级会计、安全员等备考课</div><span class="c-count">39 门课程</span></a>
+        </div>
+      </section>
+
+      <!-- 5 深度解析 -->
+      <section class="section" id="deep" aria-labelledby="deepTitle">
+        <div class="section-head">
+          <h2 id="deepTitle">企业培训课程怎么挑才不浪费学时</h2>
+          <span class="sh-sub">判断维度 · 账号权限 · 常见误区</span>
+        </div>
+        <div class="deep-text">
+          <p>同样一门「绩效面谈」课，有的 25 分钟讲完，有的拆成 12 个场景讲 4 个小时。挑课时先看课程结构，再看讲师背景，最后才看评分——评分容易被「课程短、听得轻松」拉高，参考价值有限。</p>
+
+          <h3>一、系列课与微课的适用边界</h3>
+          <p>系列课的价值在于<strong>顺序</strong>。以「新任经理带团队 30 讲」为例，前 5 讲处理角色转换，第 6—12 讲进入目标与绩效，第 13 讲之后才涉及跨部门协作。如果跳过前 5 讲直接听绩效面谈，会发现里面反复提到「目标共识」这个前置动作，而它在前面几讲已经讲过两遍。</p>
+          <p>微课适合补短板，不适合打底子。「绩效面谈 12 个场景话术」每段 8—12 分钟，讲的是具体场景下的开口方式，前提是学员已经知道绩效面谈的基本流程。把它当作新经理的第一门课，容易出现「话术背下来了，但不知道怎么铺垫」的情况。</p>
+          <ul>
+            <li>系统学习：系列课按单元顺序推进，配检查表或模板</li>
+            <li>补短板：微课定向解决单一动作，控制在 20 分钟内</li>
+            <li>团队共学：案例拆解类课程，配一次 40 分钟讨论</li>
+            <li>时效内容：直播回放，重点看答疑片段</li>
+          </ul>
+
+          <h3>二、账号权限决定能看到什么</h3>
+          <p>企业采购的账号通常分三档，不同档位登录后看到的课程范围不一样。管理员账号能看到全部课程与学习数据；部门子账号只看本部门学员进度，课程范围与企业采购包一致；学员账号只保留学习、考试、下载资料三项权限。</p>
+          <div class="check-box">
+            <div class="cb-title">登录后看不到课程？按这个顺序核对</div>
+            <div class="cb-row"><span class="cb-key">账号归属</span><span>确认登录手机号是否为企业统一开通的子账号，个人注册账号不继承企业课程包</span></div>
+            <div class="cb-row"><span class="cb-key">分组设置</span><span>管理员是否把该账号放入对应部门分组，未分组账号默认只看到公共课</span></div>
+            <div class="cb-row"><span class="cb-key">有效期</span><span>企业采购包是否在有效期内，过期后课程列表会缩为试看范围</span></div>
+            <div class="cb-row"><span class="cb-key">课程状态</span><span>该课程是否已下架或替换版本，旧版本课程不再出现在列表</span></div>
+          </div>
+
+          <h3>三、评分与完成率的读法</h3>
+          <p>课程评分在 4.5 分以上属于常见区间，区分度不高。更有参考价值的是<strong>完成率</strong>与<strong>单元回看次数</strong>。完成率低于 40% 的系列课，通常说明单讲时长偏长或内容跳跃；某几个单元回看次数明显偏高，往往是难点所在，值得优先安排。</p>
+          <p>以「大客户销售拜访全流程」为例，24 个单元中「异议处理」章节的回看次数是平均值的 1.8 倍，而「预约」章节完成率最高、回看最少。这个分布提示：预约环节多数人一次能听懂，异议处理需要反复看或多听几遍。</p>
+
+          <h3>四、常见挑课误区</h3>
+          <p>第一个误区是<strong>按课程数量采购</strong>。课程包动辄几百门，实际用到的往往集中在 20—30 门。采购前先列出本年度要解决的 3 个具体问题，再对照课程目录找对应条目，比按数量比价更有效。</p>
+          <p>第二个误区是<strong>只看讲师头衔</strong>。头衔高的讲师未必讲得细。判断方法很直接：打开试看片段，看有没有具体案例、有没有给出可执行的动作清单。只讲概念、不给例子的课程，学完很难落地。</p>
+          <p>第三个误区是<strong>把学习时长当成果</strong>。学时统计只反映观看行为，不反映掌握程度。更靠谱的做法是每门课结束后安排一次 15 分钟的小测或一次团队分享，用输出倒逼输入。</p>
+        </div>
+      </section>
+
+      <!-- 6 学习路径 -->
+      <section class="section" id="guide" aria-labelledby="guideTitle">
+        <div class="section-head">
+          <h2 id="guideTitle">新学员的课程消费顺序</h2>
+          <span class="sh-sub">从入门到进阶的四步路径</span>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <div class="step-body">
+              <div class="s-title">先确认账号类型与课程范围</div>
+              <div class="s-desc">登录后进入「我的课程」，看列表里有多少门课、是否带企业标识。个人账号与企业子账号的课程范围不同，先分清再安排学习计划，避免学了一半发现课程不在权限内。</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-body">
+              <div class="s-title">用一门短课试水，判断讲课风格</div>
+              <div class="s-desc">选 20 分钟以内的微课，例如「绩效面谈 12 个场景话术」中的任意一段。重点看讲师是否给具体例子、是否有可下载的动作清单。风格不合的讲师，系列课听起来会很吃力。</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-body">
+              <div class="s-title">按岗位选一条系列课主线</div>
+              <div class="s-desc">新经理选「新任经理带团队 30 讲」，B 端销售选「大客户销售拜访全流程」。系列课按单元顺序推进，每周 3—4 讲，配合课后检查表完成练习，比一次性刷完记得牢。</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-body">
+              <div class="s-title">用案例课和直播回放做补充</div>
+              <div class="s-desc">主线学完后，用「生产现场 5S 推行实务」这类案例拆解课做横向补充，再用直播回放的答疑片段解决具体疑问。案例课适合团队共学，一人主讲、其他人补充自己岗位的对应做法。</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7 FAQ -->
+      <section class="section" id="faq" aria-labelledby="faqTitle">
+        <div class="section-head">
+          <h2 id="faqTitle">账号登录与学习常见问题</h2>
+          <span class="sh-sub">6 个高频疑问</span>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>企业子账号登录后课程列表是空的，怎么回事？</summary>
+            <div class="faq-answer">多数情况是账号未加入部门分组。管理员在后台「账号管理—分组设置」中把该账号加入对应部门后，课程列表会按分组权限刷新。另一种可能是企业采购包已过期，此时列表只保留试看课程，需要联系管理员续期。</div>
+          </details>
+          <details>
+            <summary>同一个手机号既注册过个人账号，又被企业开通了子账号，登录后进哪个？</summary>
+            <div class="faq-answer">系统按手机号识别，默认进入企业子账号视图。若需要回到个人学习记录，可在个人中心切换身份。两边学习进度独立保存，切换不会互相覆盖，但考试成绩只计入当前身份。</div>
+          </details>
+          <details>
+            <summary>课程看到一半换设备，进度会同步吗？</summary>
+            <div class="faq-answer">同一账号在不同设备上的学习进度按单元同步，刷新页面即可看到最新进度。直播回放的观看位置同步有延迟，通常不超过 10 分钟；若长时间不同步，退出重新登录可触发一次同步。</div>
+          </details>
+          <details>
+            <summary>系列课可以跳着学吗，会不会影响结业？</summary>
+            <div class="faq-answer">可以跳学，单元之间不强制顺序。但结业条件通常要求全部单元完成且课后测达到及格线，跳过的单元仍会计入完成度统计。建议至少把前置的角色认知类单元看完，后面的内容理解起来会顺一些。</div>
+          </details>
+          <details>
+            <summary>管理员怎么导出部门学习数据？</summary>
+            <div class="faq-answer">在后台「学习数据」页选择部门与时间范围，可导出 Excel，字段包括学员姓名、完成单元数、考试分数、最近学习时间。导出权限仅管理员与授权的部门子账号拥有，普通学员账号看不到该入口。</div>
+          </details>
+          <details>
+            <summary>忘记密码，且原手机号已停用，还能登录吗？</summary>
+            <div class="faq-answer">企业子账号可由管理员在后台重置密码，重置后系统生成临时密码，首次登录需修改。个人账号需通过绑定的邮箱或人工客服核验身份后更换手机号，核验材料通常包括注册时间、最近学习课程名称。</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- 8 用户评论 -->
+      <section class="section" id="comments" aria-labelledby="commentsTitle">
+        <div class="section-head">
+          <h2 id="commentsTitle">学员学习反馈</h2>
+          <span class="sh-sub">来自课程评论区与共学群</span>
+        </div>
+        <div class="comment-grid">
+          <div class="comment"><div class="comment-head"><span class="avatar">陈</span><span class="c-nick">陈默不吭声</span><span class="c-time">11-07</span></div><div class="comment-body">新任经理第 6 单元那段示范音频听了三遍，第一次面谈照着准备的清单走，比预想顺利。就是模板下载要登录两次才成功，有点绕。</div></div>
+          <div class="comment"><div class="comment-head"><span class="avatar">林</span><span class="c-nick">林间有风</span><span class="c-time">11-06</span></div><div class="comment-body">大客户销售那门课异议处理讲了 18 条，实际用得上的大概 5 条。「已有供应商」那段的应答路径写得实在，其他偏模板化。</div></div>
+          <div class="comment"><div class="comment-head"><span class="avatar">周</span><span class="c-nick">周三下午茶</span><span class="c-time">11-06</span></div><div class="comment-body">5S 那门课第三阶段检查表新增的 9 项挺细，连清扫频次都标了。我们厂照着重排了一遍责任区，车间主任说比之前那张表好用。</div></div>
+          <div class="comment"><div class="comment-head"><span class="avatar">吴</span><span class="c-nick">吴所谓啦</span><span class="c-time">11-05</span></div><div class="comment-body">绩效面谈 12 个场景，讲低绩效反馈那段有点理想化，现实里员工当场就急了，话术根本接不上。可能得多练。</div></div>
+          <div class="comment"><div class="comment-head"><span class="avatar">赵</span><span class="c-nick">赵小满</span><span class="c-time">11-04</span></div><div class="comment-body">子账号权限分组改完之后，我们部门终于能自己导数据了，不用每次找 HR 要。省事。</div></div>
+          <div class="comment"><div class="comment-head"><span class="avatar">孙</span><span class="c-nick">孙工在车间</span><span class="c-time">11-04</span></div><div class="comment-body">安全生产那块内容更新太慢，讲的还是几年前的标准。5S 的课倒是新，两门课水平差挺多。</div></div>
+          <div class="comment"><div class="comment-head"><span class="avatar">郑</span><span class="c-nick">郑好是你</span><span class="c-time">11-03</span></div><div class="comment-body">手机号登录支持密码了，之前每次收验证码烦死。这个改动早该有。</div></div>
+          <div class="comment"><div class="comment-head"><span class="avatar">何</span><span class="c-nick">何以解忧</span><span class="c-time">11-02</span></div><div class="comment-body">结构化面试那门课的评分表模板，我们改了改直接用在校招上，五个面试官打分口径统一多了。</div></div>
+          <div class="comment"><div class="comment-head"><span class="avatar">冯</span><span class="c-nick">冯唐易老</span><span class="c-time">11-01</span></div><div class="comment-body">费用报销直播回放 42 分钟，前 20 分钟讲发票类型，后面才进正题。答疑文字稿整理得不错，11 条问答能直接发给新同事。</div></div>
+          <div class="comment"><div class="comment-head"><span class="avatar">许</span><span class="c-nick">许多多</span><span class="c-time">10-31</span></div><div class="comment-body">课程完成率那个数字看着挺高，其实我们好多人是挂着播放干别的。统计口径可以再想想。</div></div>
+          <div class="comment"><div class="comment-head"><span class="avatar">邓</span><span class="c-nick">邓布利多军</span><span class="c-time">10-30</span></div><div class="comment-body">30 天训练营的排期表在哪报名？路径页翻到底才看到入口，藏得有点深。</div></div>
+          <div class="comment"><div class="comment-head"><span class="avatar">曹</span><span class="c-nick">曹小七</span><span class="c-time">10-29</span></div><div class="comment-body">跨部门协作那几讲建议放到第 13 讲之前，新经理一上来就卡在跨部门沟通上，等学到那儿已经碰壁好几次了。</div></div>
+          <div class="comment"><div class="comment-head"><span class="avatar">袁</span><span class="c-nick">袁来如此</span><span class="c-time">10-28</span></div><div class="comment-body">昨天在电梯里听同事说这课不错，今天试了试，确实。</div></div>
+          <div class="comment"><div class="comment-head"><span class="avatar">蒋</span><span class="c-nick">蒋道理</span><span class="c-time">10-27</span></div><div class="comment-body">讲师语速偏快，1.25 倍速听着刚好，正常速度反而觉得拖。每个人感受不一样吧。</div></div>
+          <div class="comment"><div class="comment-head"><span class="avatar">韩</span><span class="c-nick">韩梅梅</span><span class="c-time">10-26</span></div><div class="comment-body">新员工入职那批课里企业文化那段 40 分钟，太长，建议拆成 3 段。制度那部分讲得清楚，请假流程终于搞明白了。</div></div>
+          <div class="comment"><div class="comment-head"><span class="avatar">沈</span><span class="c-nick">沈先生</span><span class="c-time">10-25</span></div><div class="comment-body">建议投稿那个分类加个「培训落地案例」的筛选，现在混在一起不好找。想看看别人怎么把 5S 真正推下去的。</div></div>
+        </div>
+      </section>
+
+      <!-- 9 相关资讯 -->
+      <section class="section" id="news" aria-labelledby="newsTitle">
+        <div class="section-head">
+          <h2 id="newsTitle">企业培训与课程动态</h2>
+          <span class="sh-sub">近期可核对的公开信息</span>
+        </div>
+        <div class="news-list">
+          <article class="news-item">
+            <img src="https://picsum.photos/seed/yspxnews001/600/400" width="600" height="400" loading="lazy" alt="企业培训课程更新通知，办公桌前查看课程列表">
+            <div class="news-body">
+              <h3 class="n-title"><a href="/#news">新任经理系列课第 6 单元 11 月 7 日上线，配 3 段示范音频</a></h3>
+              <div class="n-date">2026-11-07</div>
+              <p class="n-sum">该单元时长 32 分钟，附一份两页的面谈准备清单。制作方在更新说明中提到，后续第 7 单元将处理「低绩效员工改进计划」，预计 11 月 21 日上线。</p>
+            </div>
+          </article>
+          <article class="news-item">
+            <img src="https://picsum.photos/seed/yspxnews002/600/400" width="600" height="400" loading="lazy" alt="企业后台账号管理界面，权限分组设置">
+            <div class="news-body">
+              <h3 class="n-title"><a href="/#news">企业子账号权限分组上线，变更记录保留 90 天</a></h3>
+              <div class="n-date">2026-11-05</div>
+              <p class="n-sum">管理员可批量设置三档权限，单次操作上限 500 个账号。变更记录支持按操作人与时间筛选，导出为 CSV，用于内部审计留档。</p>
+            </div>
+          </article>
+          <article class="news-item">
+            <img src="https://picsum.photos/seed/yspxnews003/600/400" width="600" height="400" loading="lazy" alt="销售异议处理课程资料，笔记本与销售脚本">
+            <div class="news-body">
+              <h3 class="n-title"><a href="/#news">大客户销售课程异议脚本扩至 18 条，新增预算不足场景</a></h3>
+              <div class="n-date">2026-11-03</div>
+              <p class="n-sum">新增的两类异议各配 3 种应答路径，每条路径标注适用客户规模。课程方表示 12 月将补充「招投标阶段常见问题」一章。</p>
+            </div>
+          </article>
+          <article class="news-item">
+            <img src="https://picsum.photos/seed/yspxnews004/600/400" width="600" height="400" loading="lazy" alt="30 天训练营排期表，学习计划手写笔记">
+            <div class="news-body">
+              <h3 class="n-title"><a href="/#news">30 天新经理训练营排期公布，每周一次线上共学</a></h3>
+              <div class="n-date">2026-10-29</div>
+              <p class="n-sum">训练营按周拆分为四个阶段，共学时间固定在每周四晚 20:00，单次 60 分钟。首期计划招收 120 人，报名需由企业管理员统一提交名单。</p>
+            </div>
+          </article>
+          <article class="news-item">
+            <img src="https://picsum.photos/seed/yspxnews005/600/400" width="600" height="400" loading="lazy" alt="手机登录界面，验证码与密码双通道">
+            <div class="news-body">
+              <h3 class="n-title"><a href="/#news">手机号登录新增密码通道，验证码方式保留</a></h3>
+              <div class="n-date">2026-10-26</div>
+              <p class="n-sum">已注册账号可在个人中心设置 8—20 位密码，设置后两种登录方式并存。企业子账号的密码重置权限仍在管理员手中，学员端不开放自助重置。</p>
+            </div>
+          </article>
+          <article class="news-item">
+            <img src="https://picsum.photos/seed/yspxnews006/600/400" width="600" height="400" loading="lazy" alt="费用报销答疑文字稿，财务票据与问答记录">
+            <div class="news-body">
+              <h3 class="n-title"><a href="/#news">费用报销直播答疑整理为 11 条问答，覆盖电子发票重复报销</a></h3>
+              <div class="n-date">2026-10-18</div>
+              <p class="n-sum">文字稿按提问顺序排列，每条附上直播中的时间戳，方便回看原片段。其中「跨期票据如何处理」一条给出三种情形下的不同处理方式。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 10 相关推荐 -->
+      <section class="section" id="related" aria-labelledby="relatedTitle">
+        <div class="section-head">
+          <h2 id="relatedTitle">相关学习方向</h2>
+          <span class="sh-sub">按具体内容方向索引</span>
+        </div>
+        <div class="rec-tags">
+          <a href="/#featured">目标拆解与 OKR 落地</a>
+          <a href="/#featured">一对一沟通模板</a>
+          <a href="/#featured">B 端客户画像分析</a>
+          <a href="/#featured">招聘渠道效果对比</a>
+          <a href="/#featured">新员工 7 天上手计划</a>
+          <a href="/#featured">车间班组晨会流程</a>
+          <a href="/#featured">电子发票归档规范</a>
+          <a href="/#featured">管理培训生轮岗设计</a>
+        </div>
+      </section>
+
+      <!-- 11 榜单 -->
+      <section class="section" id="rank" aria-labelledby="rankTitle">
+        <div class="section-head">
+          <h2 id="rankTitle">近 7 天学习完成人次榜</h2>
+          <span class="sh-sub">统计周期 2026-11-01 至 2026-11-07</span>
+        </div>
+        <div class="rank-list">
+          <div class="rank-item"><span class="rank-no">1</span><div><div class="rank-name">新任经理带团队 30 讲</div><div class="rank-sub">管理力 · 30 单元</div></div><span class="rank-val">2,143 人次</span></div>
+          <div class="rank-item"><span class="rank-no">2</span><div><div class="rank-name">绩效面谈 12 个场景话术</div><div class="rank-sub">人力资源 · 12 段</div></div><span class="rank-val">1,876 人次</span></div>
+          <div class="rank-item"><span class="rank-no">3</span><div><div class="rank-name">大客户销售拜访全流程</div><div class="rank-sub">销售成交 · 24 单元</div></div><span class="rank-val">1,592 人次</span></div>
+          <div class="rank-item"><span class="rank-no">4</span><div><div class="rank-name">结构化面试提问清单</div><div class="rank-sub">人力资源 · 5 类问题</div></div><span class="rank-val">1,204 人次</span></div>
+          <div class="rank-item"><span class="rank-no">5</span><div><div class="rank-name">费用报销合规 8 个高频雷区</div><div class="rank-sub">财务合规 · 直播回放</div></div><span class="rank-val">986 人次</span></div>
+          <div class="rank-item"><span class="rank-no">6</span><div><div class="rank-name">生产现场 5S 推行实务</div><div class="rank-sub">生产制造 · 案例拆解</div></div><span class="rank-val">874 人次</span></div>
+        </div>
+      </section>
+
+      <!-- 12 互动征集 -->
+      <section class="contribute" id="contribute" aria-labelledby="contributeTitle">
+        <div>
+          <h2 id="contributeTitle">培训落地案例征集</h2>
+          <p>写下你们部门把某门课真正用起来的经过：课程名称、参与人数、推行中的阻力和最后的可核对结果。字数 800—2000 字，附上时间与岗位信息。入选案例会在「相关资讯」栏目展示，并邀请作者参与一次线上共学分享。</p>
+        </div>
+        <a class="cta-btn" href="/#contribute">提交案例</a>
+      </section>
+
+    </div>
+
+    <!-- 右栏辅助 -->
+    <aside class="aside-col" aria-label="辅助信息">
+      <div class="aside-card">
+        <h2>热门条目</h2>
+        <div class="hot-list">
+          <a href="/#featured"><span class="h-no">1</span>新任经理带团队 30 讲</a>
+          <a href="/#featured"><span class="h-no">2</span>绩效面谈 12 个场景话术</a>
+          <a href="/#featured"><span class="h-no">3</span>大客户销售拜访全流程</a>
+          <a href="/#featured"><span class="h-no">4</span>结构化面试提问清单</a>
+          <a href="/#featured"><span class="h-no">5</span>费用报销合规 8 个高频雷区</a>
+          <a href="/#featured"><span class="h-no">6</span>生产现场 5S 推行实务</a>
+        </div>
+      </div>
+      <div class="aside-card">
+        <h2>登录与账号</h2>
+        <div class="quick-links">
+          <a href="/#faq">企业子账号开通 <span>管理员</span></a>
+          <a href="/#faq">手机号登录方式 <span>双通道</span></a>
+          <a href="/#faq">密码重置流程 <span>3 步</span></a>
+          <a href="/#faq">部门分组设置 <span>后台</span></a>
+          <a href="/#faq">学习数据导出 <span>Excel</span></a>
+        </div>
+        <div class="side-note">账号问题优先联系企业管理员，管理员无法处理时再走人工客服核验。</div>
+      </div>
+      <div class="aside-card">
+        <h2>本周更新</h2>
+        <div class="quick-links">
+          <a href="/#updates">第 6 单元上线 <span>11-07</span></a>
+          <a href="/#updates">权限分组更新 <span>11-05</span></a>
+          <a href="/#updates">异议脚本扩至 18 条 <span>11-03</span></a>
+          <a href="/#updates">训练营排期公布 <span>10-29</span></a>
+          <a href="/#updates">密码登录通道 <span>10-26</span></a>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#1f5b8a"/>
+            <path d="M16 46V18h10l6 14 6-14h10v28h-8V32l-5 11h-6l-5-11v14z" fill="#f5b642"/>
+          </svg>
+          <span class="fb-text">英盛网账号登录</span>
+        </div>
+        <p class="footer-pos">内容覆盖 2026 年 10 月至 11 月的课程更新与账号功能变化，条目类型包括系列课、微课、直播回放与案例拆解，更新节奏为每周 2—4 条，账号类功能公告随版本发布同步。</p>
+      </div>
+      <div class="footer-groups">
+        <div>
+          <div class="fg-title">课程方向</div>
+          <div class="fg-list">
+            <a href="/#categories">管理力与管理技能</a>
+            <a href="/#categories">销售与客户成交</a>
+            <a href="/#categories">人力资源与招聘</a>
+            <a href="/#categories">生产制造与现场管理</a>
+            <a href="/#categories">财务与合规</a>
+          </div>
+        </div>
+        <div>
+          <div class="fg-title">学习与账号</div>
+          <div class="fg-list">
+            <a href="/#guide">新学员学习路径</a>
+            <a href="/#faq">子账号与权限</a>
+            <a href="/#faq">登录问题解答</a>
+            <a href="/#updates">功能更新记录</a>
+            <a href="/#rank">热度榜单</a>
+          </div>
+        </div>
+        <div>
+          <div class="fg-title">内容与互动</div>
+          <div class="fg-list">
+            <a href="/#news">相关资讯</a>
+            <a href="/#comments">学员评论</a>
+            <a href="/#contribute">案例投稿</a>
+            <a href="/#related">相关学习方向</a>
+            <a href="/#deep">挑课方法解析</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>页面所列课程名称、单元进度、热度与榜单数据为内容聚合示例，用于说明条目结构与信息层级。</span>
+      <span>更新于 2026-11-08 · 与正文「课程与账号功能更新」中 11-07 条目对应</span>
+    </div>
+  </div>
+</footer>
+
+<button class="back-top" id="backTop" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  // 搜索
+  var searchInput = document.getElementById('siteSearch');
+  var searchResult = document.getElementById('searchResult');
+  var searchable = [];
+  document.querySelectorAll('.card-title a, .u-name, .news-body .n-title a, .cat-card .c-name, .rank-name, .faq-list summary').forEach(function(el){
+    var text = (el.textContent || '').trim();
+    if(text){ searchable.push({text: text, el: el}); }
+  });
+  function doSearch(){
+    var q = searchInput.value.trim().toLowerCase();
+    searchResult.innerHTML = '';
+    if(!q){ searchResult.classList.remove('active'); return; }
+    var hits = searchable.filter(function(item){ return item.text.toLowerCase().indexOf(q) > -1; }).slice(0,10);
+    if(hits.length === 0){
+      searchResult.innerHTML = '<div class="sr-empty">没有找到相关课程或条目，换个关键词试试</div>';
+    } else {
+      hits.forEach(function(item){
+        var a = document.createElement('a');
+        a.textContent = item.text;
+        a.href = '/#featured';
+        a.setAttribute('role','option');
+        searchResult.appendChild(a);
+      });
+    }
+    searchResult.classList.add('active');
+  }
+  if(searchInput){
+    searchInput.addEventListener('input', doSearch);
+    searchInput.addEventListener('focus', function(){ if(searchInput.value.trim()) doSearch(); });
+    document.addEventListener('click', function(e){
+      if(!e.target.closest('.search-box')) searchResult.classList.remove('active');
+    });
+  }
+
+  // 回到顶部
+  var backTop = document.getElementById('backTop');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > window.innerHeight){ backTop.classList.add('show'); }
+    else { backTop.classList.remove('show'); }
+  }, {passive:true});
+  backTop.addEventListener('click', function(){ window.scrollTo({top:0,behavior:'smooth'}); });
+
+  // 移动端菜单
+  var hamburger = document.getElementById('hamburger');
+  var overlay = document.getElementById('overlay');
+  var channel = document.getElementById('channel');
+  function openMenu(){
+    channel.classList.add('mobile-open');
+    overlay.classList.add('active');
+    hamburger.setAttribute('aria-expanded','true');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMenu(){
+    channel.classList.remove('mobile-open');
+    overlay.classList.remove('active');
+    hamburger.setAttribute('aria-expanded','false');
+    document.body.style.overflow = '';
+  }
+  hamburger.addEventListener('click', function(){
+    if(channel.classList.contains('mobile-open')) closeMenu(); else openMenu();
+  });
+  overlay.addEventListener('click', closeMenu);
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ closeMenu(); searchResult.classList.remove('active'); }
+  });
+  channel.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMenu); });
+
+  // 频道高亮（滚动）
+  var sections = document.querySelectorAll('.main-col .section, .contribute');
+  var channelLinks = document.querySelectorAll('.channel-list a');
+  var map = {};
+  channelLinks.forEach(function(a){
+    var id = a.getAttribute('href').replace('/#','');
+    map[id] = a;
+  });
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        channelLinks.forEach(function(a){ a.classList.remove('current'); });
+        var link = map[entry.target.id];
+        if(link) link.classList.add('current');
+      }
+    });
+  }, {rootMargin: '-120px 0px -60% 0px', threshold: 0});
+  sections.forEach(function(s){ if(s.id) io.observe(s); });
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"英盛网账号登录",
+  "description":"企业培训课程入口、学员账号权限与学习路径聚合页面，覆盖管理力、销售、人力资源、生产制造、财务合规五个方向。",
+  "inLanguage":"zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"企业子账号登录后课程列表是空的，怎么回事？","acceptedAnswer":{"@type":"Answer","text":"多数情况是账号未加入部门分组。管理员在后台「账号管理—分组设置」中把该账号加入对应部门后，课程列表会按分组权限刷新。另一种可能是企业采购包已过期，此时列表只保留试看课程，需要联系管理员续期。"}},
+    {"@type":"Question","name":"同一个手机号既注册过个人账号，又被企业开通了子账号，登录后进哪个？","acceptedAnswer":{"@type":"Answer","text":"系统按手机号识别，默认进入企业子账号视图。若需要回到个人学习记录，可在个人中心切换身份。两边学习进度独立保存，切换不会互相覆盖，但考试成绩只计入当前身份。"}},
+    {"@type":"Question","name":"课程看到一半换设备，进度会同步吗？","acceptedAnswer":{"@type":"Answer","text":"同一账号在不同设备上的学习进度按单元同步，刷新页面即可看到最新进度。直播回放的观看位置同步有延迟，通常不超过 10 分钟；若长时间不同步，退出重新登录可触发一次同步。"}},
+    {"@type":"Question","name":"系列课可以跳着学吗，会不会影响结业？","acceptedAnswer":{"@type":"Answer","text":"可以跳学，单元之间不强制顺序。但结业条件通常要求全部单元完成且课后测达到及格线，跳过的单元仍会计入完成度统计。建议至少把前置的角色认知类单元看完，后面的内容理解起来会顺一些。"}},
+    {"@type":"Question","name":"管理员怎么导出部门学习数据？","acceptedAnswer":{"@type":"Answer","text":"在后台「学习数据」页选择部门与时间范围，可导出 Excel，字段包括学员姓名、完成单元数、考试分数、最近学习时间。导出权限仅管理员与授权的部门子账号拥有，普通学员账号看不到该入口。"}},
+    {"@type":"Question","name":"忘记密码，且原手机号已停用，还能登录吗？","acceptedAnswer":{"@type":"Answer","text":"企业子账号可由管理员在后台重置密码，重置后系统生成临时密码，首次登录需修改。个人账号需通过绑定的邮箱或人工客服核验身份后更换手机号，核验材料通常包括注册时间、最近学习课程名称。"}}
+  ]
+}
+</script>
+</body>
+  </html>
